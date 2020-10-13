@@ -18,7 +18,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/i,
+                test: /\.css$/i, // \.css$ indicates test any file that ends with .css.
                 use: ['style-loader','css-loader?url=false', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
                 /*style-loader loads css file and css-loader applies it*/
             }
