@@ -13,8 +13,17 @@ module.exports = {
         filename: 'bundled.js',
         path: path.resolve(__dirname, 'app')
     },
+    devServer: {
+        before: function(app, server) {
+            server._watch('./app/**/*.html') /* The '*' is used to find any folder and file that contains the html */
+        },
+        contentBase: path.join(__dirname, 'app'),
+        hot: true,
+        port: 3000,
+        host: '0.0.0.0' /* Allows another device to access the app that is on the same wifi/server. */
+    },
     mode: 'development',
-    watch: true,
+    //watch: true,
     module: {
         rules: [
             {
