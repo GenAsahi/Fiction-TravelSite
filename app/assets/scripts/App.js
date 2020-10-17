@@ -4,7 +4,7 @@ import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
 //import Modal from './modules/Modal';
-
+//alert("hello this is a test!!!");
 //new Modal();
 //let stickyHeader = new StickyHeader();
 new StickyHeader();
