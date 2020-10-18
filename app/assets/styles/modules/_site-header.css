@@ -1,6 +1,6 @@
 .site-header {
     padding: 10px 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 2;
     transition: background-color .3s ease-out;
@@ -29,12 +29,19 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        transform-origin: 0 0;
+        transform-origin: 100% 0;
         transition: transform .3s ease-out;
         position: absolute;
         padding: 13px 29px; /*vertical, horizontial*/
+
+        .site-header--dark & {
+            transform: scale(.55);
+            transition: transform .3s ease-out;
+            right: 1px;
+        }
         
         @mixin atMedium {
+            transform-origin: 0 0;
             left: auto;
             transform: translateX(0);
             padding: 25px 36px;
@@ -50,7 +57,7 @@
     &__menu-icon {
         width: 20px;
         height: 19px;
-        //background-color: white;
+        //background-color: rgba($mainBlue, .5);
         position: absolute;
         z-index: 10;
         top: 10px;
@@ -99,6 +106,7 @@
     &__menu-icon--close-x {
         &::before {
             transform: rotate(45deg) scaleX(1.25);
+            ;
         }
 
         .site-header__menu-icon__middle {
