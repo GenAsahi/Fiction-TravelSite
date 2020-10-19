@@ -21,7 +21,7 @@ class ClientArea {
             this.form.remove()
             this.contentArea.innerHTML = response.data;
         }).catch(() => {
-            this.contentArea.insertHTML = `<p class="client-area__error>That secret phrase is not correct</p>`
+            this.contentArea.innerHTML = `<p class="client-area__error>That secret phrase is not correct</p>`
             this.field.value = ''
             this.field.focus()
         });
