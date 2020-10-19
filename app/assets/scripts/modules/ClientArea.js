@@ -5,7 +5,7 @@ class ClientArea {
         this.injectHTML();
         this.form = document.querySelector(".client-area__form");
         this.field = document.querySelector(".client-area__input");
-        this.contentArea = document.querySelector(".content-area__content-area");
+        this.contentArea = document.querySelector(".client-area__content-area");
         this.events();
     }
 
@@ -19,12 +19,12 @@ class ClientArea {
     sendRequest() {
         Axios.post('https://amazing-shaw-065274.netlify.app/.netlify/functions/secret-area', {password: this.field.value}).then(response => {
             this.form.remove()
-            this.contentArea.innerHTML = response.data;
+            this.contentArea.innerHTML = response.data
         }).catch(() => {
             this.contentArea.innerHTML = `<p class="client-area__error>That secret phrase is not correct. Try again.</p>`
             this.field.value = ''
             this.field.focus()
-        });
+        })
     }
 
 injectHTML() {
